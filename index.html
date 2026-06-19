@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+    <h2>Expense Tracker</h2>
+
+    <ul>
+        <li onclick="setActive(this)" class="active">Dashboard</li>
+        <li onclick="setActive(this)">Add Expense</li>
+        <li onclick="setActive(this)">Expenses</li>
+        <li onclick="setActive(this)">Reports</li>
+    </ul>
+</div>
+
+    <div class="main">
+
+        <h1>Dashboard</h1>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Total Expenses</h3>
+                <p id="totalExpense">₹0</p>
+            </div>
+            <div class="card">
+    <h3>Transactions</h3>
+    <p id="transactionCount">0</p>
+</div>
+
+            <div class="card">
+                <h3>Food</h3>
+                <p id="foodTotal">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Shopping</h3>
+                <p id="shoppingTotal">₹0</p>
+            </div>
+
+            <div class="card">
+                <h3>Transport</h3>
+                <p id="transportTotal">₹0</p>
+            </div>
+
+        </div>
+
+        <div class="expense-form">
+
+            <h2>Add Expense</h2>
+
+            <input type="text" id="category" placeholder="Category">
+
+            <input type="number" id="amount" placeholder="Amount">
+
+            <input type="date" id="date">
+
+            <textarea id="description" placeholder="Description"></textarea>
+
+            <button id="saveButton" onclick="addExpense()">Add Expense</button>
+        </div>
+
+        <div class="expense-table">
+
+            <h2>Recent Expenses</h2>
+            <button onclick="exportCSV()">
+    Export to CSV
+</button>
+
+            <div class="search-box">
+                
+                    <input
+    type="text"
+    id="search"
+    placeholder="Search Category"
+    onkeyup="searchExpense()">
+            </div>
+
+            <table id="expenseTable">
+
+                <tr>
+                    <th>ID</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                    
+                </tr>
+    
+                
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
